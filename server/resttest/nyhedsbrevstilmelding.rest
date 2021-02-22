@@ -1,0 +1,48 @@
+@port = 5033
+@route = nyhedsbrevtilmelding
+
+// KONTAKT (DER SENDES EN FORMULAR-BESKED) -------------------------------------------------------
+
+### GET ALLE - ADMIN
+
+GET http://localhost:{{port}}/{{route}}/admin
+
+
+
+### GET UD FRA ID - ADMIN
+
+GET http://localhost:{{port}}/{{route}}/admin/5f70c0f01bec571e00ebf386
+
+
+
+### POST - IKKE ADMIN!
+
+POST http://localhost:{{port}}/{{route}}
+content-type: application/json
+
+{
+    "email": "of2@jdkfj.dk"
+}
+
+
+
+### PUT - ADMIN
+
+PUT http://localhost:{{port}}/{{route}}/admin/5f70c93fe2c7eb8e6423fae5
+content-type: application/json
+
+{
+    "email": "mj@jdkfj.dk"
+}
+
+
+
+### DELETE UD FRA ID - ADMIN
+
+DELETE http://localhost:{{port}}/{{route}}/admin/5f70c93fe2c7eb8e6423fae5
+
+
+
+### DELETE UD FRA EMAIL - IKKE ADMIN
+
+DELETE http://localhost:{{port}}/{{route}}/afmeld/hejder@test2.dk

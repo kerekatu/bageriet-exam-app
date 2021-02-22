@@ -1,0 +1,75 @@
+@port = 5033
+@route = produkter
+
+
+
+### GET ALLE
+
+GET http://localhost:{{port}}/{{route}}
+
+
+
+### GET UD FRA ID
+
+GET http://localhost:{{port}}/{{route}}/5f70d7ed3075551394cc1d70
+
+
+
+### SØG - søger i både produkt og ingrediens-titel
+
+GET http://localhost:{{port}}/{{route}}/soeg/fløde
+
+
+
+### PATCH - post 1 like til et produkt (ID) - IKKE ADMIN
+## - tilføjes/plusses til nuværende antal likes
+
+PATCH http://localhost:{{port}}/{{route}}/likes/5f671006d1be3e2fd0cb2638
+
+
+
+### POST 
+
+## OBS! Produkt oprettes først
+## - ingredienser oprettes herefter med brug af produkts ID
+
+POST http://localhost:{{port}}/{{route}}/admin
+content-type: application/json
+
+{
+     "titel" : "Håndværker",
+     "teaser" : "Landmark",
+     "beskrivelse" : "Opskriftens fremgangsmåde her ...",
+     "tilberedningstid" : 75,
+     "antal" : 20,
+     "pris" : 12.00,
+     "kategori" : "5f63b9f9702cca37f87ce06f"
+}
+
+// oprettet er default til Date() - nu
+// + image - sættes til paavej.jpg hvis intet med
+
+
+### PUT
+
+PUT http://localhost:{{port}}/{{route}}/admin/5f70d7ed3075551394cc1d70
+content-type: application/json
+
+{
+     "titel" : "Håndværker rettet",
+     "teaser" : "Landmarken",
+     "beskrivelse" : "Opskriftens evt. rettede fremgangsmåde her ...",
+     "tilberedningstid" : 75,
+     "antal" : 20,
+     "pris" : 12.00,
+     "kategori" : "5f63b9f9702cca37f87ce06f"
+}
+
+// oprettet er default til Date() - nu
+// + image - sættes til paavej.jpg hvis intet med
+
+
+
+### DELETE
+
+DELETE http://localhost:{{port}}/{{route}}/admin/5f70d7ed3075551394cc1d70

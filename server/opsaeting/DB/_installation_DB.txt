@@ -1,0 +1,56 @@
+
+Import af data til MongoDB
+
+Følg de 3 steps herunder og/eller følg videoen her: https://videndjurs.planetestream.com/View.aspx?id=5291~4r~SDdyPGeU
+
+
+
+
+Step 1: KLARGØR DATA/JSON til import:
+---------------------------------------------------------------------------------------
+
+1. Opret en mappe med navnet fx "eksamensjson" på C-drevet - fx så det ser sådan her ud: C:\mongofiler
+    - VIGTIGT - det kan give problemer på andre drev, så vælg nu C-drevet!
+
+2. Kopier filerne fra mappen her (.json og .bson) over i din nye mappe "mongofiler" på C-drevet
+
+
+
+
+Step 2: TJEK AT DU HAR DB Tools installeret (https://docs.mongodb.com/database-tools/):
+---------------------------------------------------------------------------------------
+
+1. Tjek at du har Tools-mappen på dit C-drev: C:\Program Files\MongoDB\Tools
+    "C:\Program Files" hedder muligvis "C:\Programmer" når leder på C-drevet!
+
+-> Hvis du har Tools-mappen - så gå videre Step 3 ... 
+-> Hvis du IKKE har Tools-mappen skal du først installere MongoDB Database Tools:
+
+2. Download Database Tools herfra: https://www.mongodb.com/try/download/database-tools?tck=docs_databasetools
+
+3. Installer Database Tools.
+
+
+
+
+Step 3: Restore json/bson-filerne til databasen
+---------------------------------------------------------------------------------------
+
+4. Brug fx Stifinder/explorer til at browse dig frem til mappen: C:\Program Files\MongoDB\Tools\100\bin
+    "C:\Program Files" hedder muligvis "C:\Programmer" når leder på C-drevet!
+
+5. Gør en af følgende: 
+	1. Kopier stien til bin-mappen - og åbn CMD/Kommandoprompt eller en terminal i VS Code, og skriv: cd C:\Program Files\MongoDB\Tools\100\bin
+	2. ELLER skriv CMD i adresselinjen (man skal stå i bin-mappen) - så åbner mappen automatisk i CMD-prompt
+
+6. Tjek igen en ekstra gang, at du nu - i en terminal i VS Code eller CMD/Kommandoprompt - står i bin-mappen: C:\Program Files\MongoDB\Tools\100\bin
+   
+8. Kopier kommandoen herunder (vær omhyggelig med at få det hele med UDEN linjeskift eller andet):
+
+    mongorestore -d bageriet C:\mongofiler
+
+- hvor "bageriet" bliver navnet på den nye/restored database. Og C:\eksamensjson er mappen hvor db-filerne som skal restores findes.
+
+9. Nu burde MongoDB restore databasen fra mappen på dit C-drev.
+
+11. Åbn MongoDB (localhost) - tryk på refresh og tjek, at den nye database er oprettet, og at der er collections med documents og data

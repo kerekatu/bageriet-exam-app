@@ -1,0 +1,48 @@
+@port = 5033
+@route = kontakt
+
+// KONTAKT (DER SENDES EN FORMULAR-BESKED) -------------------------------------------------------
+
+### GET ALLE - ADMIN
+
+GET http://localhost:{{port}}/{{route}}/admin
+
+
+
+### GET UD FRA ID - ADMIN
+
+GET http://localhost:{{port}}/{{route}}/admin/5f70c0f01bec571e00ebf386
+
+
+
+### POST - IKKE ADMIN!
+
+POST http://localhost:{{port}}/{{route}}
+content-type: application/json
+
+{
+    "navn": "Ole Frederiksen",
+    "email": "of@jdkfj.dk",
+    "emne": "Ny test fra rest",
+    "besked": "Her er beskeden"
+}
+
+
+
+### PUT - ADMIN
+
+PUT http://localhost:{{port}}/{{route}}/admin/5f7099041bec571e00ebf385
+content-type: application/json
+
+{
+    "navn": "Mia Jensen",
+    "email": "mj@jdkfj.dk",
+    "emne": "Ny test fra rest 2",
+    "besked": "Her er beskeden 2"
+}
+
+
+
+### DELETE - ADMIN
+
+DELETE http://localhost:{{port}}/{{route}}/admin/5f7099041bec571e00ebf385

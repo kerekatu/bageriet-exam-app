@@ -1,0 +1,59 @@
+@port = 5033
+@route = bruger
+
+
+## OBS! 
+## Der må kun være 1 forekomst af brugernavn og email i databasen. 
+## = der kan ikke oprettes en bruger som har samme brugernavn og/eller email som en anden bruger.
+
+## Brugere oprettes default med rollen Medlem
+## Brugere med rollen "ADMIN" kan ikke slettes! Kan dog slås fra i routen, hvis du ved, hvorfor og hvad du gør!
+
+
+### GET - hent alle
+
+GET http://localhost:{{port}}/{{route}}/admin
+
+
+
+### GET - hent ud fra ID
+
+GET http://localhost:{{port}}/{{route}}/admin/5f6f94abde3bc7906834c234
+
+
+
+### POST - opret ny
+
+// NB! IKKE ADMIN HER: Alle skal kunne oprette sig som brugere
+POST http://localhost:{{port}}/{{route}}
+content-type: application/json
+
+{
+    "brugernavn": "kanelbullan",
+    "fornavn": "Karen",
+    "efternavn": "Melbjerg",
+    "email": "km@mail.dk",
+    "password": "karen123456"
+}
+
+
+
+### PUT - ret 
+
+PUT http://localhost:{{port}}/{{route}}/admin/5f6f94abde3bc7906834c234
+content-type: application/json
+
+{
+    "brugernavn": "suppevisken",
+    "fornavn": "Søren",
+    "efternavn": "Hansen",
+    "email": "sha@mail.dk",
+    "password": "suppe123"
+}
+
+
+
+### DELETE - set ud fra ID
+## OBS! Brugere med rollen ADMIN kan ikke slettes - se i readme.txt eller læs øverst
+
+DELETE http://localhost:{{port}}/{{route}}/admin/5f705c760daa3674547b5128

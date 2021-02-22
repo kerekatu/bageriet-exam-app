@@ -1,0 +1,22 @@
+@port = 5033
+@route = produktingrediens
+
+
+
+
+### POST - opret ingrediens til produkt (medsend produkts ID)
+
+POST http://localhost:{{port}}/{{route}}/admin/5f70d41f26a63a5b508a6933
+content-type: application/json
+
+{
+     "ingrediens_titel" : "Havregryn",
+     "maengde" : "120",
+     "enhed_forkortet" : "dl",
+     "enhed_navn" : "deciliter"
+}
+
+
+### DELETE - slet ingrediens fra et produkt (medsend produkts ID + ingrediens ID)
+
+DELETE http://localhost:{{port}}/{{route}}/admin/5f6638a41fe7cf67d08a64d8/5f6638be1fe7cf67d08a64db

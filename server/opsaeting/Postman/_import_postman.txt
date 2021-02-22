@@ -1,0 +1,12 @@
+
+Hvis du ikke allerede har Postman installeret - så hent App'en/programmet her: https://www.postman.com/downloads/
+Det burde ikke være nødvendigt, at du opretter dig som bruger - men Postman forsøger sikkert at lokke dig til det!
+
+1. Åbn Postman
+2. Klik på "Import"-knappen (muligvis i øverste venstre hjørne)
+3. Træk Postman-json-filen (Bageriet.postman_collection.json) ind i Import-området i Postman 
+4. Klik på "Import" - ignorer advarslen (noget med at oprette sig for at få adgang til API)
+
+Så burde du have en Bageriet-mappe med alle http-metoderne i dit Postman-program.
+
+Start backenden/API'et op (npm run start ELLER npm run devStart) og tjek, at metoderne virker.

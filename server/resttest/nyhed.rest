@@ -1,0 +1,50 @@
+@port = 5033
+@route = nyheder
+
+
+
+### GET ALLE
+
+GET http://localhost:{{port}}/{{route}}
+
+
+
+### GET UD FRA ID
+
+GET http://localhost:{{port}}/{{route}}/5f6707dfd1be3e2fd0cb2630
+
+
+### POST som formdata med image - kan testes med json og uden image
+
+POST http://localhost:{{port}}/{{route}}/admin
+content-type: application/json
+
+{
+     "titel" : "Håndværker",
+     "teaser" : "Landmark",
+     "nyhedstekst" : "Når vi en sjælden gang køber morgenbrød hos bageren, så skal jeg altid have en håndværker, fordi jeg elsker det tykke lag med blå birkes ovenpå."
+     // image: - sættes til paavej.jpg hvis intet med
+     // oprettet: er default til Date() - nu
+}
+
+
+
+### PUT
+
+PUT http://localhost:{{port}}/{{route}}/admin/5f70cd7ff70dd77a80d424aa
+content-type: application/json
+
+{
+     "titel" : "Håndværker",
+     "teaser" : "Landmark",
+     "nyhedstekst" : "Når vi en sjælden gang køber morgenbrød hos bageren, så skal jeg altid have en håndværker, fordi jeg elsker det tykke lag med blå birkes ovenpå."
+     // image:  - bevares eller sættes til paavej.jpg hvis intet med
+     // oprettet: sat til default dato ved oprettelse - skal ikke ændres ved put
+}
+
+### DELETE
+
+DELETE http://localhost:{{port}}/{{route}}/admin/5f70cd7ff70dd77a80d424aa
+
+
+
