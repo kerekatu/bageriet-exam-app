@@ -2,6 +2,7 @@
   "files.exclude": {
     ".vscode": true,
     "web/node_modules": true,
-    "web/yarn.lock": true
+    "web/yarn.lock": true,
+    "web/.next": true
   }
 }

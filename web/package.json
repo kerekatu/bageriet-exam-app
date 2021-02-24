@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "date-fns": "^2.17.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "mongoose": "^5.11.17",
     "next": "10.0.7",
@@ -20,6 +21,9 @@
   "devDependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "eslint": "^7.20.0",
     "eslint-plugin-react": "^7.22.0"
   }
