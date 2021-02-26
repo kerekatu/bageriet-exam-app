@@ -3,10 +3,13 @@ import Intro from '@/components/home/intro'
 import Newsletter from '@/components/home/newsletter'
 import ProductList from '@/components/products/product-list'
 import Layout from '@/layouts/layout'
+import withAuth from '@/lib/withAuth'
 
-export default function Home() {
+export const getServerSideProps = withAuth({})
+
+export default function Home({ user }) {
   return (
-    <Layout isHeaderHero>
+    <Layout isHeaderHero isLoggedIn={user} pageTitle="Forside">
       <Intro />
       <Newsletter />
       <Title

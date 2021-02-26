@@ -1,3 +1,4 @@
+import { mq } from '@/styles/global'
 import styled from '@emotion/styled'
 import { useEffect, useState } from 'react'
 import useSWR from 'swr'
@@ -49,6 +50,11 @@ const IntroWrapper = styled.section`
     grid-template-columns: repeat(3, 1fr);
     gap: 0 7rem;
     margin: 10rem 0 20rem 0;
+
+    ${mq[1]} {
+      grid-template-columns: 1fr;
+      gap: 6rem 0;
+    }
 
     & > div {
       display: flex;

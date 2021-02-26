@@ -1,4 +1,5 @@
 import CONSTANTS from '@/lib/constants'
+import { mq } from '@/styles/global'
 import styled from '@emotion/styled'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
@@ -29,7 +30,7 @@ const ProductList = ({ amount, includeCategories }) => {
   useEffect(() => {
     if (!products) return
     setSelectedProducts(() =>
-      includeCategories
+      includeCategories && categories
         ? products.filter(
             (product) => product.kategori.titel === categories[0].titel
           )
@@ -95,12 +96,16 @@ const ProductList = ({ amount, includeCategories }) => {
   )
 }
 
-const ProductListWrapper = styled.div`
+const ProductListWrapper = styled.section`
   display: grid;
   grid-template-columns: ${({ includeCategories }) =>
     includeCategories ? 'min-content 3fr' : ''};
   gap: 8rem;
   margin-top: 8rem;
+
+  ${mq[0]} {
+    gap: 4rem;
+  }
 
   .products {
     display: grid;
@@ -109,6 +114,14 @@ const ProductListWrapper = styled.div`
       includeCategories
         ? 'grid-template-columns: repeat(3, 1fr)'
         : 'grid-template-columns: repeat(4, 1fr)'};
+
+    ${mq[2]} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    ${mq[0]} {
+      grid-template-columns: 1fr;
+    }
 
     & li {
       display: flex;

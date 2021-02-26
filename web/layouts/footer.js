@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <div className="footer-upper">
-        <Link href={router.pathname}>
+        <Link href={router.asPath}>
           <a className="scroll" title="Scroll To Top">
             <img src="/static/images/chevron.png" alt="Arrow Up" />
           </a>
@@ -37,6 +37,7 @@ const FooterWrapper = styled.footer`
     justify-content: center;
     align-items: center;
     background-color: var(--color-gray-2);
+    padding: 0 2rem;
 
     & > h3 {
       color: var(--color-white);
@@ -62,7 +63,7 @@ const FooterWrapper = styled.footer`
   .scroll {
     position: absolute;
     top: -2.5rem;
-    background-color: #f9f9f9;
+    background-color: #f0f0f0;
     border-radius: 50%;
     padding: 1rem;
     outline: 0;

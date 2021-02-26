@@ -4,7 +4,7 @@ const Title = ({ title, subtitle }) => {
   return (
     <TitleWrapper>
       <h3>{title}</h3>
-      <p>{subtitle}</p>
+      {subtitle && <p>{subtitle}</p>}
     </TitleWrapper>
   )
 }

@@ -19,6 +19,7 @@ const globalStyles = css`
     --color-gray-2: #333;
     --color-gray-3: #777;
     --color-gray-4: #c0c0c0;
+    --color-gray-5: #fafafa;
     --color-blue: #607684;
     --color-blue-2: #45525a;
     --color-blue-3: #324049;
@@ -48,6 +49,10 @@ const globalStyles = css`
   html {
     font-size: 62.5%;
     box-sizing: border-box;
+
+    ${mq[2]} {
+      font-size: 50%;
+    }
   }
 
   body {
@@ -55,11 +60,32 @@ const globalStyles = css`
     font-family: 'Open Sans';
     font-weight: var(---font-weight-2);
     line-height: 1.58;
+    background-color: var(--color-gray-5);
   }
 
   #__next {
     min-height: 100vh;
   }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  input,
+  button,
+  textarea {
+    font-size: 1.4rem;
+    font-family: var(----font-body);
+    line-height: 1;
+  }
+
+  button {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* CUSTOM */
 
   h1 {
     font-size: var(--font-size-5);
@@ -78,23 +104,6 @@ const globalStyles = css`
     font-size: var(--font-size-2);
   }
 
-  ul,
-  ol {
-    list-style: none;
-  }
-
-  input,
-  button {
-    font-size: 1.4rem;
-    font-family: var(----font-body);
-    line-height: 1;
-  }
-
-  button {
-    display: block;
-    cursor: pointer;
-  }
-
   button.primary {
     background-color: transparent;
     border: 0.1rem solid var(--color-blue);
@@ -109,6 +118,25 @@ const globalStyles = css`
   button.primary:hover {
     color: var(--color-white);
     background-color: var(--color-blue);
+  }
+
+  button.secondary {
+    background-color: var(--color-blue);
+    border: none;
+    color: var(--color-white);
+    padding: 1.2rem 6rem;
+    font-size: var(--font-size-2);
+    letter-spacing: 0.1rem;
+    transition: background-color 0.15s ease-in-out;
+  }
+
+  button.secondary:hover {
+    background-color: var(--color-blue-2);
+  }
+
+  section,
+  article {
+    padding: 0 2rem;
   }
 
   .full-bleed {
